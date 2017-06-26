@@ -167,6 +167,12 @@
         "description": "Size of the Elasticsearch Kibana node"
       }
     },
+    "kibanaStaticPrivateIp": {
+      "type": "string",
+      "metadata": {
+        "description": "Static Private IP address for Kibana node"
+      }
+    },
     "jumpbox": {
       "type": "string",
       "defaultValue": "No",
@@ -1186,7 +1192,8 @@
       "applicationGatewaySubnet": {
         "name": "[parameters('vNetAppGatewaySubnetName')]",
         "addressPrefix": "[parameters('vNetNewAppGatewaySubnetAddressPrefix')]"
-      }
+      },
+      "kibanaStaticPrivateIp": "[parameters('kibanaStaticPrivateIp')]"
     },
     "commonVmSettings": {
       "namespacePrefix": "[parameters('vmHostNamePrefix')]",
